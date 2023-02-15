@@ -110,7 +110,7 @@ function MenuBar() {
                     onChange={descriptionTextChange}
                     placeholder="Add description..."
                     cols="32"
-                    rows="9"
+                    rows="5"
                     className="w-full p-2 rounded placeholder:text-gray-400 outline-none resize-none"
                   ></textarea>
                   <small className="p-2 font-thin text-gray-500">
