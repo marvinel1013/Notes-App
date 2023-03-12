@@ -36,9 +36,7 @@ function NotesList() {
         <h2 className=" text-2xl text-[#00000099] mb-7">Loading Notes...</h2>
       ) : notes.length ? (
         <FilterNotes
-          notesList={notesList.filter((n) =>
-            n.title.toLowerCase().includes(searchNotes)
-          )}
+          notesList={notesList.filter((n) => n.title.includes(searchNotes))}
           selectedTab={selectedTab}
         />
       ) : (
