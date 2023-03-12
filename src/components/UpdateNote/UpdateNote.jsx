@@ -13,19 +13,18 @@ function UpdateNote({ notes, setUpdateNote }) {
       description: updateDescription,
     });
     setUpdateNote(false);
-    if (notes.title !== updateTitle) {
-      toast.success("Note updated successfully!", {
-        className: " bg-green-100",
-        position: "top-center",
-        duration: 2000,
-      });
-    } else {
-      toast.error("Note did not change!", {
-        className: " bg-red-100",
-        position: "top-center",
-        duration: 2000,
-      });
-    }
+
+    notes.title !== updateTitle || notes.description !== updateDescription
+      ? toast.success("Note updated successfully!", {
+          className: " bg-green-100",
+          position: "top-center",
+          duration: 2000,
+        })
+      : toast.error("Note did not change!", {
+          className: " bg-red-100",
+          position: "top-center",
+          duration: 2000,
+        });
   };
 
   return (
@@ -65,3 +64,20 @@ function UpdateNote({ notes, setUpdateNote }) {
 }
 
 export default UpdateNote;
+
+// if (
+//   notes.title === updateTitle &&
+//   notes.description === updateDescription
+// ) {
+//   toast.success("Note updated successfully!", {
+//     className: " bg-green-100",
+//     position: "top-center",
+//     duration: 2000,
+//   });
+// } else {
+//   toast.error("Note did not change!", {
+//     className: " bg-red-100",
+//     position: "top-center",
+//     duration: 2000,
+//   });
+// }
